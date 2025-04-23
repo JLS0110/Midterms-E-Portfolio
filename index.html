@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>John Lloyd S. Santos - Portfolio</title>
+</head>
+<body>
+    <header>
+      <img src="images/John Lloyd.svg" class="logo-name" height="200px" width="200px" alt="logo-name/pic">
+      <div class="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="midterms.html">Midterms</a></li>
+          <li><a class="nav-link disabled" aria-disabled="true">Finals</a></li>
+        </ul>
+      </nav>
+      <a class="contacts" href="contact.html">Contacts</a>
+    </header>
+    <main>
+      <aside>
+        <img src="images/profile-picture.png"  class="profile" alt="profile-picture">
+      </aside>
+      <section>
+        <div class="title">
+          <h1>John Lloyd <br><span>Santos</span></h1>
+          <h4>Polytechnic University of the  Philippines <br><span>Bachelor of Science in Computer Science</span></h4>
+        </div>
+        <hr style="border: 2px solid #D0B290; width: 90%; margin: 20px;">
+        <div class="about">
+          <h3>Welcome to My E-Portfolio!</h3> <br>
+          <p>
+            I'm excited to share my journey in web development through this space. 
+            Here, you'll find a collection of my projects and activities from the midterms, 
+            showcasing the websites and webpages I've designed and built. Each project reflects 
+            my growth, problem-solving skills, and creativity in front-end development, particularly 
+            CSS styling and layout design. 
+            <br> <br>Feel free to explore, and I hope you find inspiration in my work!
+          </p>
+        </div>
+      </section>
+    </main>
+</body>
+<script>
+  let lastScrollTop = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", function() {
+      let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+          // Scrolling down → Hide header
+          header.style.transform = "translateY(-100%)";
+          header.style.transition = "transform 0.3s ease-in-out";
+      } else {
+          // Scrolling up → Show header
+          header.style.transform = "translateY(0)";
+      }
+
+      lastScrollTop = scrollTop; // Update last scroll position
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const contactsButton = document.querySelector(".contacts");
+
+    if (!menuToggle || !navLinks) {
+        console.error("Menu button or nav-links missing in the DOM!");
+        return;
+    }
+
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+        console.log("Menu button clicked! Class applied:", navLinks.classList.contains("active"));
+
+        if (window.innerWidth <= 768) { 
+            if (contactsButton && !navLinks.contains(contactsButton)) {
+                navLinks.appendChild(contactsButton);
+                console.log("Contacts button moved inside dropdown.");
+            }
+        }
+    });
+});
+
+</script>
+</html>

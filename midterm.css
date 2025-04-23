@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    width: 100% !important;
+    height: auto;
+    background-color: #24252A;
+    font-family: "Montserrat", sans-serif !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+li, a, button{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 10%;
+    background-color: #24252A;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+.logo-name{
+    cursor: pointer;
+}
+
+.nav-links{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nav-link.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.nav-links li{
+    display: inline-block !important;
+    padding: 5px 20px;
+}
+
+.nav-links li a{
+    transition: all 0.3s ease 0s;
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-links li a::after {
+    content: '';
+    width: 0; 
+    height: 3px;
+    background: #D0B290;
+    position: absolute;
+    left: 0;
+    bottom: -6px; 
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links li a:hover::after {
+    width: 70%;
+}
+
+.menu-toggle {
+    display: none; 
+    cursor: pointer;
+}
+
+.menu-toggle i {
+    font-size: 24px;
+    color: #ecf0f1;
+}
+
+.contacts{
+    padding: 9px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    box-shadow: inset -10px -10px 30px rgba(0, 0, 0, 0.4), 
+                10px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contacts:hover{
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+h1{
+    margin-top: 10%;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(24px, 5vw, 50px);
+    font-weight: bold;
+    color: #0088a9;
+    text-shadow: 2px 2px 4px rgba(0, 136, 169, 0.8);
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.hr-top{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.card {
+    background-color: #D0B290;
+    color: black; 
+    border: 2px solid #D0B290; 
+}
+
+#card-2 {
+    background-color: #0088a9 !important;
+    color: white !important; 
+    border: 2px solid #0088a9; 
+}
+
+hr {
+    border: 2px solid #ffffff !important;
+    border-radius: 5px;
+    width: 95%;
+    margin: 40px auto; 
+    animation: fillHr 2s forwards ease-in-out;
+}
+
+.activities{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.written-activities{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+h2{
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(20px, 4vw, 40px);
+    font-weight: bold;
+    color: #0088a9;
+    text-shadow: 2px 2px 4px rgba(0, 136, 169, 0.8);
+    text-align: center;
+    width: 100%;
+}
+
+h3{
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(20px, 4vw, 40px);
+    font-weight: 300;
+    color: #0088a9;
+    text-shadow: 2px 2px 4px rgba(0, 136, 169, 0.8);
+    text-align: center; 
+    width: 100%;
+}
+
+.midterm-reqs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.activities, .midterm-reqs, .written-activities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%; 
+    max-width: 1200px; 
+    margin: auto;
+}
+
+
+@media (max-width: 768px) {
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column; 
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1, h2 {
+        font-size: 28px;
+    }
+
+    .activities, .midterm-reqs{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+    }
+
+    .about {
+        width: 100%; 
+    }
+}
+
+@media (max-width: 768px) {
+    .written-activities {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        width: 100%;
+        height: auto; 
+        background: #24252A;
+        padding: 15px;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        display: flex; 
+        height: 100vh; 
+        overflow-y: auto; 
+    }      
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: 20px;
+    }
+
+    .menu-toggle i {
+        font-size: 24px;
+        color: #ecf0f1;
+    }
+
+    main {
+        margin-top: 80px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts {
+        display: none; 
+        width: 100%;
+        padding: 12px 20px;
+        background-color: #0088a9;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .nav-links.active .contacts {
+        display: block;
+        order: 99; 
+        width: 100%;
+        padding: 12px 20px;
+        background-color: #0088a9;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        text-align: center;
+        margin-top: 15px; 
+    }
+
+    .logo-name {
+        display: none; 
+    }
+
+    .nav-links.active .logo-name {
+        display: block; 
+    }
+}
+
+

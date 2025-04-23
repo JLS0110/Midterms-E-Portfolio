@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #24252A;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+li, a, button{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    width: 100%;
+    max-height: 10%;
+    overflow: hidden;
+}
+
+.logo-name{
+    cursor: pointer;
+    z-index: 1;
+}
+
+.nav-links{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nav-link.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.nav-links li{
+    display: inline-block !important;
+    padding: 5px 20px;
+}
+
+.nav-links li a{
+    transition: all 0.3s ease 0s;
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-links li a::after {
+    content: '';
+    width: 0; 
+    height: 3px;
+    background: #D0B290;
+    position: absolute;
+    left: 0;
+    bottom: -6px; 
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links li a:hover::after {
+    width: 70%;
+}
+
+.contacts{
+    padding: 9px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    box-shadow: inset -10px -10px 30px rgba(0, 0, 0, 0.4), 
+                10px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contacts:hover{
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+.menu-toggle {
+    display: none; 
+    cursor: pointer;
+}
+
+.menu-toggle i {
+    font-size: 24px;
+    color: #ecf0f1;
+}
+
+main{
+    margin: 0;
+    max-height: calc(100% - 61px);
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px; 
+    width: 90%;
+}
+
+aside, section {
+    flex: 1;
+    max-width: 100%;
+}
+
+aside {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 500px;
+    max-height: calc(100% - 61px);
+}
+
+.profile{
+    height: 700px;
+    width: 630px;
+}
+
+section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    align-content: center;
+    gap: 15px;
+    width: 100%;
+    color: #ecf0f1;
+}
+
+h4{
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+h1{
+    font-family: "Montserrat", sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.title h1 span{
+    font-family: "Montserrat", sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #0088a9;
+}
+
+.title {
+    text-align: left;
+}
+
+hr {
+    border: 2px solid #D0B290;
+    border-radius: 5px;
+    width: 90%;
+    margin: 40px auto; 
+    animation: fillHr 2s forwards ease-in-out;
+}
+
+.about{
+    width: 500px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3px;
+    border-radius: 10px;
+    position: relative;
+    animation: glowPulse 2s infinite alternate;
+}
+
+h3{
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: #0088a9;
+}
+
+p{
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #ecf0f1;
+}
+
+@keyframes fillHr {
+    0% { width: 0; }
+    100% { width: 90%; }
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 5px #0088a9; }
+    50% { box-shadow: 0 0 30px #0088a9; } 
+    100% { box-shadow: 0 0 5px #0088a9; }
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    aside, section {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    main, section, aside {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .profile {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative;
+        top: 0;
+    }
+
+    .about {
+        width: 90%; 
+        height: auto;
+        padding: 20px;
+        box-shadow: 0 0 15px #0088a9;
+        border-radius: 10px;
+        position: relative;
+        animation: glowPulse 2s infinite alternate;
+        overflow: visible; 
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        max-width: 1300px;
+    }
+
+    .profile {
+        width: 600px;
+        height: auto;
+    }
+
+    .about {
+        max-width: 600px;
+    }
+
+    h1 {
+        font-size: clamp(30px, 4vw, 60px);
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #24252A;
+        padding: 15px;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+        z-index: 1002;
+    }
+    
+    .nav-links.active {
+        display: flex !important;
+    }    
+
+    .menu-toggle {
+        display: block; 
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: 20px;
+    }
+
+    .menu-toggle i {
+        font-size: 24px;
+        color: #ecf0f1;
+    }
+
+    main {
+        margin-top: 80px; 
+    }
+
+    body, header {
+        overflow: visible !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts {
+        display: none; 
+        width: 100%;
+        padding: 12px 20px;
+        background-color: #0088a9;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .nav-links.active .contacts {
+        display: block;
+        order: 99;
+        width: 100%;
+        padding: 12px 20px;
+        background-color: #0088a9;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        text-align: center;
+        margin-top: 15px; 
+    }
+
+    .logo-name {
+        display: none; 
+    }
+
+    .nav-links.active .logo-name {
+        display: block; 
+    }
+}
